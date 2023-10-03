@@ -373,20 +373,29 @@ table.table .avatar {
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Name</label>
-							<input type="text" name="name" value='{{i.name}}' class="form-control" required>
+							<input name="name" value='{{i.name}}' type="text" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Email</label>
-							<input type="email" name="email" value='{{i.email}}' class="form-control" required>
+							<input name="email" value='{{i.email}}' type="email" class="form-control" required>
 						</div>
 						<div class="form-group">
+							<label>Semester</label>
+							<textarea name="semester"  class="form-control" required> {{i.semester}}</textarea>
+						</div>
+
+						<div class="form-group">
 							<label>Address</label>
-							<textarea name="address" class="form-control" required>{{i.address}}</textarea>
+							<textarea name="address"  class="form-control" required> {{i.address}} </textarea>
 						</div>
 						<div class="form-group">
 							<label>Phone</label>
-							<input name="phone" value='{{i.mobile}}' type="text" class="form-control" required>
+							<input name="phone" type="text" value='{{i.phone}}' class="form-control" required>
 						</div>					
+						<div class="form-group">
+							<label>Batch</label>
+							<input name="batch" type="text" value='{{i.batch}}' class="form-control" required>
+						</div>		
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

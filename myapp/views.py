@@ -45,7 +45,6 @@ def homePage(request):
 
 
 # Add item
-
 def addPage(request):
     myName=request.POST.get("name")
     myEmail=request.POST.get("email")
@@ -68,29 +67,32 @@ def addPage(request):
 
 
 # # Update or Edit page
-# def updatePage(request,id):
-#     if request.method=="POST":
-#         myName=request.POST.get("name")
-#         myEmail=request.POST.get("email")
-#         myAddress=request.POST.get("address")
-#         myPhone=request.POST.get("phone")
+def updatePage(request,id):
+    if request.method=="POST":
+        myName=request.POST.get("name")
+        myEmail=request.POST.get("email")
+        mySemester=request.POST.get("semester")
+        myAddress=request.POST.get("address")
+        myPhone=request.POST.get("phone")
+        myBatch=request.POST.get("batch")
+
+        emp = Student(
+        id=id,
+        name=myName,
+        email=myEmail,
+        semester = mySemester,
+        address=myAddress,
+        phone=myPhone,
+        batch=myBatch,
+    )
         
-#         emp=Student(
-#             id=id,
-#             name=myName,
-#             email=myEmail,
-#             address=myAddress,
-#             mobile=myPhone
-            
-#         )
-        
-#         emp.save()
-#         return redirect("homePage")
+        emp.save()
+        return redirect("homePage")
 
 
-# # Delete =======================
+# Delete =======================
 
-# def deletePage(request,id):
-#     emp=Student.objects.filter(id=id)
-#     emp.delete()
-#     return redirect("homePage")
+def deletePage(request,id):
+    emp=Student.objects.filter(id=id)
+    emp.delete()
+    return redirect("homePage")
