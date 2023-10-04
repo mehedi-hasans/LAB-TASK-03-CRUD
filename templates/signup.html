@@ -136,11 +136,12 @@ button{
     </style>
 </head>
 <body>
+
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="" method="post">
+    <form action="" method="post" >
 
         {% csrf_token %}
 
@@ -157,16 +158,13 @@ button{
 
         <label for="password1">Password</label>
         <input type="password" placeholder="Password" id="password1" name="password1">
-
-
         <label for="password2">Confrom Password</label>
         <input type="password" placeholder="Confrom Password" id="password2" name="password2">
-        <input type="file" name='img'>
-        
-        
-        <button type="submit">Signup</button>
-        
+        <input type="file" name="i"  >
+        <a href="{% url 'signupPage' %}"><button type="submit">Signup</button></a>
         <a href="{% url 'loginPage' %}" >I have already account</a>
     </form>
+    
 </body>
 </html>
+
